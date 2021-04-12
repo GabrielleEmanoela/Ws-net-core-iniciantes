@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Microsoft.EntityFrameworkCore;
+using FilmesCRUDRazor.Models;
+
 namespace FilmesCRUDRazor
 {
     public class Startup
@@ -23,7 +26,9 @@ namespace FilmesCRUDRazor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddRazorPages();
+            services.AddDbContext<FilmContext>(options => options.UseSqlite(Configuration.GetConnectionString("FilmContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,7 +40,7 @@ namespace FilmesCRUDRazor
             }
             else
             {
-                
+
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();

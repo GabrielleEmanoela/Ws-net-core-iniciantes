@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/FilmesCRUDRazor/bin/Debug/net5.0/FilmesCRUDRazor.dll",
+            "program": "${workspaceFolder}/FilmesCRUDRazor/bin/Debug/net0/FilmesCRUDRazor.dll",
             "args": [],
             "cwd": "${workspaceFolder}/FilmesCRUDRazor",
             "stopAtEntry": false,

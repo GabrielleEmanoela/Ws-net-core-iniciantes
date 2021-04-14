@@ -5,54 +5,58 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Top Movie</h1>
 <div class="container">
     <div class="row">
+
         <p>
-            <a class ="btn btn-primary" asp-page="Create"><span class="glyphicon glyphicon-plus"</span> Create Film</a>
+            <span class="btn btn-primary" asp-page="Create"><span class="glyphicon glyphicon-plus"></span> Create Film
+                </a>
         </p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Film[0].Title)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Film[0].DateLaunch)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Film[0].Gender)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Film[0].Price)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Film)
-                {
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DateLaunch)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Gender)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Price)
-                        </td>
-                        <td>
-                            <a asp-page="./Edit" asp-route-id="@item.FilmId">Edit</a> |
-                            <a asp-page="./Details" asp-route-id="@item.FilmId">Details</a> |
-                            <a asp-page="./Delete" asp-route-id="@item.FilmId">Delete</a>
-                        </td>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Film[0].Title)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Film[0].DateLaunch)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Film[0].Gender)
+                        </th>
+                        <th class="text-center">
+                            @Html.DisplayNameFor(model => model.Film[0].Price)
+                        </th>
+                        <th class="text-center"> Actions </th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Film)
+                    {
+                        <tr>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.DateLaunch)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td class="text-center">
+                                <a asp-page="./Edit" asp-route-id="@item.FilmId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.FilmId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.FilmId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

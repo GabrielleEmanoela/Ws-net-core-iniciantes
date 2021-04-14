@@ -6,7 +6,6 @@
 }
 
 <h1>Edit</h1>
-
 <h4>Film</h4>
 <hr />
 <div class="row">
@@ -36,15 +35,16 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn  btn-default" asp-page="./Index">Back to List</a>
             </div>
         </form>
     </div>
-</div>
 
+</div>
 <div>
-    <a asp-page="./Index">Back to List</a>
+
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -49,9 +49,13 @@
                                 @Html.DisplayFor(modelItem => item.Price)
                             </td>
                             <td class="text-center">
-                                <a asp-page="./Edit" asp-route-id="@item.FilmId">Edit</a> |
-                                <a asp-page="./Details" asp-route-id="@item.FilmId">Details</a> |
-                                <a asp-page="./Delete" asp-route-id="@item.FilmId">Delete</a>
+                                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.FilmId"><span
+                                    class="glyphicon glyphicon-pencil"> </span> Edit</a> |
+                                <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.FilmId"> <span
+                                    class="glyphicon glyphicon-plus">
+                                    </span>Details</a> |
+                                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.FilmId"><span
+                                    class="glyphicon glyphicon-minus"></span>Delete</a>
                             </td>
                         </tr>
                     }

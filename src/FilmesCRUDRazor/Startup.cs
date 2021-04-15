@@ -27,7 +27,7 @@ namespace FilmesCRUDRazor
         {
 
             services.AddRazorPages();
-            services.AddDbContext<FilmContext>(options => options.UseSqlite(Configuration.GetConnectionString("FilmContext")));
+            services.AddDbContext<FilmContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
